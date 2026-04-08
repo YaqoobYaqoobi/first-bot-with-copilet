@@ -2,6 +2,9 @@ from decision_engine import make_decision
 from trading import save_demo_trade, apply_risk_management
 from telegram_bot import send_message
 import os
+from setup_database import setup_database
+
+setup_database()
 
 def main():
     mode = os.getenv("MODE", "demo")
