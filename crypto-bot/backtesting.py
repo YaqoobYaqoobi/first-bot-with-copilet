@@ -1,5 +1,5 @@
 import pandas as pd
-from trading import save_demo_trade
+from trading.trading import save_demo_trade   # مسیر درست
 from decision_engine import make_decision
 from ai_model import process_news
 
@@ -8,7 +8,6 @@ def run_backtest(symbol="BTCUSDT", historical_data=None, news_data=None):
     balance = 10000  # سرمایه اولیه فرضی
     position = None
 
-    # داده‌های تاریخی باید شامل قیمت‌ها و اندیکاتورها باشد
     for i in range(len(historical_data)):
         market_data = {
             "rsi": historical_data.iloc[i]["rsi"],
@@ -17,12 +16,8 @@ def run_backtest(symbol="BTCUSDT", historical_data=None, news_data=None):
             "trend_score": historical_data.iloc[i]["trend_score"]
         }
 
-        # تحلیل اخبار در همان زمان
         fundamental_data = process_news(news_data) if news_data else {"sentiment_score": 0}
-
-        # تصمیم نهایی
         decision, votes = make_decision(market_data, fundamental_data, symbol)
-
         price = historical_data.iloc[i]["close_price"]
 
         if decision == "BUY" and position is None:

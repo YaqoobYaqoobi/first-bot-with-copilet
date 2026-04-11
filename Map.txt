@@ -1,0 +1,35 @@
+crypto-bot/
+│
+├── requirements.txt
+├── .env
+│
+├── bot.py
+├── backtesting.py
+├── decision_engine.py
+├── ai_model.py
+│
+├── data/
+│   ├── indicators.py
+│   ├── news_fetch.py
+│   ├── sentiment_analysis.py
+│
+├── database/
+│   ├── setup_database.py
+│   ├── db.py
+│
+├── trading/
+│   ├── trading.py
+│   ├── binance_api.py
+│   ├── telegram_bot.py
+│
+├── ml/
+│   ├── ml_models.py
+│   ├── train_model.py
+│
+├── deep_learning/
+│   ├── train_lstm.py
+│   ├── lstm_predict.py
+│   ├── deep_learning.py
+│
+└── models/
+    └── ذخیره مدل‌های آموزش‌دیده (مثل lstm_BTCUSDT.h5)

@@ -1,6 +1,6 @@
-from ml_models import get_models
+from ml.ml_models import get_models
 from ai_model import analyze_market
-from lstm_predict import predict_with_lstm
+from deep_learning.lstm_predict import predict_with_lstm
 
 def make_decision(market_data, fundamental_data, symbol="BTCUSDT"):
     votes = []

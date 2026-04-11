@@ -1,7 +1,6 @@
-from sentiment_analysis import analyze_sentiment
+from data.sentiment_analysis import analyze_sentiment
 
 def analyze_market(technical_data, fundamental_data):
-    # ترکیب تحلیل تکنیکال و فاندامنتال
     score = technical_data.get('trend_score',0) + fundamental_data.get('sentiment_score',0)
     if score > 1.5:
         return "BUY"
